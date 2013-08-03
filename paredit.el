@@ -372,22 +372,22 @@ Paredit behaves badly if parentheses are unbalanced, so exercise
                  "(foo |)    ; \n()"
                  "(|)    ; \n()"))
 
-   "Movement & Navigation"
-   ("C-M-f"     paredit-forward
-                ("(foo |(bar baz) quux)"
-                 "(foo (bar baz)| quux)")
-                ("(foo (bar)|)"
-                 "(foo (bar))|"))
-   ("C-M-b"     paredit-backward
-                ("(foo (bar baz)| quux)"
-                 "(foo |(bar baz) quux)")
-                ("(|(foo) bar)"
-                 "|((foo) bar)"))
-   ("C-M-u"     paredit-backward-up)
-   ("C-M-d"     paredit-forward-down)
-   ("C-M-p"     paredit-backward-down)  ; Built-in, these are FORWARD-
-   ("C-M-n"     paredit-forward-up)     ; & BACKWARD-LIST, which have
-                                        ; no need given C-M-f & C-M-b.
+   ;; "Movement & Navigation"
+   ;; ("C-M-f"     paredit-forward
+   ;;              ("(foo |(bar baz) quux)"
+   ;;               "(foo (bar baz)| quux)")
+   ;;              ("(foo (bar)|)"
+   ;;               "(foo (bar))|"))
+   ;; ("C-M-b"     paredit-backward
+   ;;              ("(foo (bar baz)| quux)"
+   ;;               "(foo |(bar baz) quux)")
+   ;;              ("(|(foo) bar)"
+   ;;               "|((foo) bar)"))
+   ;; ("C-M-u"     paredit-backward-up)
+   ;; ("C-M-d"     paredit-forward-down)
+   ;; ("C-M-p"     paredit-backward-down)  ; Built-in, these are FORWARD-
+   ;; ("C-M-n"     paredit-forward-up)     ; & BACKWARD-LIST, which have
+   ;;                                      ; no need given C-M-f & C-M-b.
 
    "Depth-Changing Commands"
    ("M-("       paredit-wrap-round
