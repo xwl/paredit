@@ -2,7 +2,7 @@
 
 ;;; Rudimentary, kludgey test suite for paredit -- work in progress!
 
-;; Copyright (C) 2005--2013 Taylor R. Campbell
+;; Copyright (C) 2005--2014 Taylor R. Campbell
 
 ;; This file is part of paredit.
 ;;
@@ -287,7 +287,9 @@ Four arguments: the paredit command, the text of the buffer
     ("|\\\\\\\\" "|\\\\" "|" error)
     ("\\\\|\\\\" "\\\\|" error)
     ("(|\\\\\\\\)" "(|\\\\)" "(|)" "|" error)
-    ("(\\\\|\\\\)" "(\\\\|)" "(\\\\|)")))
+    ("(\\\\|\\\\)" "(\\\\|)" "(\\\\|)")
+    ("|(" "|" error)
+    ("|)" "|" error)))
 
 (paredit-test 'paredit-backward-delete
   '(("fo|o" "f|o")
@@ -304,7 +306,9 @@ Four arguments: the paredit command, the text of the buffer
     ("\\\\\\\\|" "\\\\|" "|" error)
     ("\\\\|\\\\" "|\\\\" error)
     ("(\\\\\\\\|)" "(\\\\|)" "(|)" "|" error)
-    ("(\\\\|\\\\)" "(|\\\\)" "(|\\\\)")))
+    ("(\\\\|\\\\)" "(|\\\\)" "(|\\\\)")
+    ("(|" "|" error)
+    (")|" "|" error)))
 
 (dolist (command '(paredit-delete-region paredit-kill-region))
   ;++ Need to check whether `paredit-kill-region' updates the kill ring
